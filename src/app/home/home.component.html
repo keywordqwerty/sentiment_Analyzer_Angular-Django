@@ -1,0 +1,26 @@
+<div class="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+    <div class="w-full max-w-md p-6 shadow-lg rounded-2xl bg-white">
+      <h1 class="text-2xl font-semibold text-center mb-4 font-sans">Sentiment Analyzer</h1>
+  
+      <input
+        type="text"
+        [(ngModel)]="text"
+        placeholder="Enter a sentence..."
+        class="w-full p-2 border rounded-lg shadow-sm mb-4"
+      />
+  
+      <button
+        (click)="analyzeSentiment()"
+        [disabled]="loading"
+        class="w-full bg-black text-white py-2 rounded-lg hover:bg-gray-900 transition duration-200"
+      >
+        {{ loading ? 'Analyzing...' : 'Analyze' }}
+      </button>
+  
+      <div *ngIf="result" class="mt-4 p-3 text-center bg-gray-50 border rounded-lg transition-opacity duration-300">
+        <p class="text-lg font-medium">Sentiment: {{ result.sentiment }}</p>
+        <p class="text-sm text-gray-600">Score: {{ result.score | json }}</p>
+      </div>
+    </div>
+  </div>
+  
