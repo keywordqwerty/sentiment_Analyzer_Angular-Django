@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [FormsModule,CommonModule],
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'] // or .scss if you're using SCSS
+  styleUrls: ['./home.component.css'] 
 })
 export class HomeComponent {
   text: string = '';
